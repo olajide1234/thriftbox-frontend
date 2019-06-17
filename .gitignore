@@ -1,6 +1,6 @@
 
-# Gulp build lib files
-lib
+# Dist files files
+dist
 
 # Dependency directories
 node_modules/
