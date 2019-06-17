@@ -2,6 +2,9 @@
 # Dist files files
 dist
 
+# yarn lock file
+yarn.lock
+
 # Dependency directories
 node_modules/
 jspm_packages/
