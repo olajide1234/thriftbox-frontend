@@ -1,17 +1,16 @@
 
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './routes/index';
+
 import { render } from 'react-dom';
+import './assets/css/azia';
 
-class Button extends React.Component {
-  render() {
-    return <button>{this.props.text}</button>;
-  }
-}
+const App = () => (
+  <Router>
+    <Routes />
+  </Router>
+);
 
-window.onload = () => {
-  const root = document.createElement('div');
-  root.id = 'react-root';
-  document.body.appendChild(root);
+render(<App />, document.getElementById('app'));
 
-  render(<Button text="Hello, Worlds!" />, root);
-};
