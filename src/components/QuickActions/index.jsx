@@ -19,7 +19,7 @@ class QuickActions extends React.Component {
         <Card.Body>
           <div className="border-bottom">
             <span>
-              <h3 className="lighter no-buttom-margin">Quick actions</h3>
+              <h3 className="no-buttom-margin">Quick actions</h3>
               <p>Please select any of these buttons to carry out a quick action</p>
             </span>
           </div>

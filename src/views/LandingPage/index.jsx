@@ -12,7 +12,7 @@ const LandingPage = ({ history, loading }) => {
 
   React.useEffect(() => {
     state.episodes.length === 0
-  && loginUser(dispatch);
+      && loginUser(dispatch);
   });
 
   const [userCredentials, setUserCredentials] = useState({
@@ -20,7 +20,7 @@ const LandingPage = ({ history, loading }) => {
     password: null
   });
 
-  // const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
 
   function updateLocalState(event) {
     setUserCredentials({ ...userCredentials, [event.target.name]: event.target.value });
