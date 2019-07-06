@@ -1,10 +1,12 @@
 
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Routes from './routes/index';
-
 import { render } from 'react-dom';
-import './assets/css/azia';
+import Routes from './routes/index';
+import { StoreProvider } from './data/store';
+
+import './assets/css/azia.css';
+
 
 const App = () => (
   <Router>
@@ -12,5 +14,8 @@ const App = () => (
   </Router>
 );
 
-render(<App />, document.getElementById('app'));
-
+render(
+  <StoreProvider>
+    <App />
+  </StoreProvider>, document.getElementById('app')
+);
