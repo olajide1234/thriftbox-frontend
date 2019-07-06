@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class DataHeader extends React.Component {
   constructor(props) {
@@ -7,13 +8,14 @@ class DataHeader extends React.Component {
   }
 
   render() {
+    const { subText } = this.props;
     return (
       <div className="az-dashboard-nav">
         <nav className="nav">
           <a className="nav-link" data-toggle="tab" href="#">
             <span>
               <h4>Hi Habib!</h4>
-              <p>Here is a summary of your activities!</p>
+              <p>{subText}</p>
             </span>
           </a>
         </nav>
@@ -48,5 +50,13 @@ class DataHeader extends React.Component {
     );
   }
 }
+
+DataHeader.defaultProps = {
+  subText: '',
+};
+
+DataHeader.propTypes = {
+  subText: PropTypes.string
+};
 
 export default DataHeader;

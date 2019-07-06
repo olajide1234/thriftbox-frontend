@@ -10,14 +10,14 @@ class TwoLineCard extends React.Component {
 
 
   render() {
-    const { classStyle } = this.props;
+    const { classStyle, width, header, text } = this.props;
 
     return (
-      <Card className={classStyle} style={{ width: "48%" }}>
+      <Card className={classStyle} style={{ width: `${width}` }}>
         <Card.Body className="pl-1 pr-1">
-          <Card.Title><h5 className="lighter text-center">Total savings amount</h5></Card.Title>
+          <Card.Title><h5 className="lighter text-center">{header}</h5></Card.Title>
           <Card.Text>
-            <h4 className="text-center">NGN 225,000</h4>
+            <h4 className="text-center">{text}</h4>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -25,8 +25,18 @@ class TwoLineCard extends React.Component {
   }
 }
 
+TwoLineCard.defaultProps = {
+  classStyle: '',
+  width: '',
+  header: '',
+  text: ''
+};
+
 TwoLineCard.propTypes = {
-  classStyle: PropTypes.string.isRequired
+  classStyle: PropTypes.string,
+  width: PropTypes.string,
+  header: PropTypes.string,
+  text: PropTypes.string
 };
 
 export default TwoLineCard;

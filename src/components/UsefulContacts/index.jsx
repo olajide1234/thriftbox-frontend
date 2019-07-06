@@ -40,7 +40,7 @@ class UsefulContacts extends React.Component {
         <Card.Body>
           <div className="border-bottom">
             <span>
-              <h3 className="lighter no-buttom-margin">Useful contacts</h3>
+              <h3 className="no-buttom-margin">Useful contacts</h3>
               <p>Feel free to reach out using any of the following contacts</p>
             </span>
           </div>

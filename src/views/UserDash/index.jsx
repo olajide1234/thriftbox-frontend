@@ -14,15 +14,15 @@ function UserDash(props) {
     <div>
       <Header props={props} />
       <Container>
-        <DataHeader />
+        <DataHeader subText="Here is a summary of your activities!" />
         <Row>
           <Col>
             <GraphBox />
           </Col>
           <Col>
             <Row className="mr-0 ml-0">
-              <TwoLineCard classStyle="mb-3 mr-2 p-2" />
-              <TwoLineCard classStyle="mb-3 ml-2 p-2" />
+              <TwoLineCard classStyle="mb-3 mr-2 p-2" width="48%" header="Total savings amount" text="NGN 225,000" />
+              <TwoLineCard classStyle="mb-3 ml-2 p-2" width="48%" header="Total loans amount" text="NGN 105,000" />
             </Row>
             <Row className="mr-0 ml-0">
               <ThreeLineCard />
