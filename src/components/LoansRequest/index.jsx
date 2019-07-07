@@ -38,7 +38,7 @@ class LoansRequest extends React.Component {
                   </Form.Control>
                 </Col>
                 <Col>
-                  <label htmlFor="guarantor2">Choose Guarantor 1</label>
+                  <label htmlFor="guarantor2">Choose Guarantor 2</label>
                   <Form.Control as="select" id="guarantor2">
                     <option>Femi Otedola</option>
                     <option>Seun John</option>

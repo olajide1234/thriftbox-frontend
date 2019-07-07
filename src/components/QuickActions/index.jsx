@@ -12,7 +12,7 @@ class QuickActions extends React.Component {
 
 
   render() {
-    const { classStyle } = this.props;
+    const { classStyle, history } = this.props;
 
     return (
       <Card className={classStyle} style={{ width: "100%" }}>
@@ -24,9 +24,9 @@ class QuickActions extends React.Component {
             </span>
           </div>
           <Row className="mr-0 ml-0 d-flex justify-content-between">
-            <LargeButton text="Request quick loan" classStyle="mt-4 mb-3 p-3" />
-            <LargeButton text="Buy promo item" classStyle="mt-4 mb-3 p-3" />
-            <LargeButton text="Increase savings" classStyle="mt-4 mb-3 p-3" />
+            <LargeButton text="Request quick loan" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/loans')} />
+            <LargeButton text="Buy promo item" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/promo')} />
+            <LargeButton text="Increase savings" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/savings')} />
             <LargeButton text="Make a complaint" classStyle="mt-4 mb-3 p-3" />
           </Row>
         </Card.Body>
@@ -41,6 +41,8 @@ QuickActions.defaultProps = {
 
 QuickActions.propTypes = {
   classStyle: PropTypes.string,
+  history: PropTypes.object.isRequired,
+
 };
 
 export default QuickActions;

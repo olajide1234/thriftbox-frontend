@@ -10,13 +10,12 @@ class Header extends React.Component {
   }
 
   render() {
-    const { props: { location: { pathname } } } = this.props;
+    const { props: { history, location: { pathname } } } = this.props;
     return (
       <div>
-
-        <Navbar bg="white" expand="lg" className="header-shadow">
+        <Navbar bg="white" expand="lg" className="header-shadow fixed-top">
           <Container>
-            <Navbar.Brand href="/">
+            <Navbar.Brand onClick={() => history.push('/dashboard')}>
               <h1 className="az-logo">
                 ThriftB
                 <span>o</span>
@@ -27,16 +26,16 @@ class Header extends React.Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
 
-                <Nav.Link className={pathname === '/dashboard' ? 'activeHeader' : null} href="#home">Dashboard</Nav.Link>
-                <Nav.Link className={pathname === '/savings' ? 'activeHeader' : null} href="#home">Savings</Nav.Link>
-                <Nav.Link className={pathname === '/loans' ? 'activeHeader' : null} href="#home">Loans</Nav.Link>
-                <Nav.Link className={pathname === '/promo' ? 'activeHeader' : null} href="#home">Promo </Nav.Link>
+                <Nav.Link className={pathname === '/dashboard' ? 'activeHeader' : null} onClick={() => history.push('/dashboard')}>Dashboard</Nav.Link>
+                <Nav.Link className={pathname === '/savings' ? 'activeHeader' : null} onClick={() => history.push('/savings')}>Savings</Nav.Link>
+                <Nav.Link className={pathname === '/loans' ? 'activeHeader' : null} onClick={() => history.push('/loans')}>Loans</Nav.Link>
+                <Nav.Link className={pathname === '/promo' ? 'activeHeader' : null} onClick={() => history.push('/promo')}>Promo </Nav.Link>
 
               </Nav>
               <NavDropdown title="Hi Habib" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Sign Out</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => history.push('/')}>Sign Out</NavDropdown.Item>
               </NavDropdown>
             </Navbar.Collapse>
           </Container>
