@@ -12,18 +12,15 @@ class DataHeader extends React.Component {
     return (
       <div className="az-dashboard-nav">
         <nav className="nav">
-          <a className="nav-link" data-toggle="tab" href="#">
-            <span>
-              <h4>Hi Habib!</h4>
-              <p>{subText}</p>
-            </span>
-          </a>
+          <span>
+            <h4>Hi Habib!</h4>
+            <p>{subText}</p>
+          </span>
         </nav>
 
         <nav className="nav">
           <a className="nav-link" href="#">
             <i className="far fa-save" />
-            {' '}
             <span>
               <p className="lighter">Join date</p>
               <p>Jan 10, 2019</p>
@@ -31,7 +28,6 @@ class DataHeader extends React.Component {
           </a>
           <a className="nav-link" href="#">
             <i className="far fa-file-pdf" />
-            {' '}
             <span>
               <p className="lighter">Organisation</p>
               <p>Andela</p>
