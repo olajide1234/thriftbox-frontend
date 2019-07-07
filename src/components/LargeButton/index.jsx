@@ -10,10 +10,10 @@ class LargeButton extends React.Component {
 
 
   render() {
-    const { text, classStyle } = this.props;
+    const { text, classStyle, onClick } = this.props;
 
     return (
-      <Button size="lg" className={`${classStyle} thriftBoxColor`}>
+      <Button onClick={onClick} size="lg" className={`${classStyle} thriftBoxColor`}>
         {text}
       </Button>
 
@@ -23,7 +23,9 @@ class LargeButton extends React.Component {
 
 LargeButton.propTypes = {
   text: PropTypes.string.isRequired,
-  classStyle: PropTypes.string.isRequired
+  classStyle: PropTypes.string.isRequired,
+  onClick: PropTypes.string.isRequired
+
 };
 
 export default LargeButton;

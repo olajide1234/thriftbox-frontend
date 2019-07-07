@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import Header from '../../components/Header';
 import DataHeader from '../../components/DataHeader';
 import GraphBox from '../../components/GraphBox';
@@ -30,7 +31,7 @@ function UserDash(props) {
           </Col>
         </Row>
         <Row className="mr-0 ml-0">
-          <QuickActions classStyle="mt-4 mb-2" />
+          <QuickActions classStyle="mt-4 mb-2" history={props.history} />
           <UsefulContacts classStyle="mt-4 mb-2" />
         </Row>
       </Container>
@@ -40,7 +41,7 @@ function UserDash(props) {
 }
 
 UserDash.propTypes = {
-
+  history: PropTypes.object.isRequired,
 };
 
 export default UserDash;
