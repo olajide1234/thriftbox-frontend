@@ -9,6 +9,7 @@ class Header extends React.Component {
     this.state = {};
   }
 
+
   render() {
     const { props: { history, location: { pathname } } } = this.props;
     return (
@@ -26,7 +27,7 @@ class Header extends React.Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
 
-                <Nav.Link className={pathname === '/dashboard' ? 'activeHeader' : null} onClick={() => history.push('/dashboard')}>Dashboard</Nav.Link>
+                <Nav.Link className={pathname === '/dashboard' || pathname === '/admindashboard' ? 'activeHeader' : null} onClick={() => history.push('/dashboard')}>Dashboard</Nav.Link>
                 <Nav.Link className={pathname === '/savings' ? 'activeHeader' : null} onClick={() => history.push('/savings')}>Savings</Nav.Link>
                 <Nav.Link className={pathname === '/loans' ? 'activeHeader' : null} onClick={() => history.push('/loans')}>Loans</Nav.Link>
                 <Nav.Link className={pathname === '/promo' ? 'activeHeader' : null} onClick={() => history.push('/promo')}>Promo </Nav.Link>
