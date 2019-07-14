@@ -8,7 +8,7 @@ class DataHeader extends React.Component {
   }
 
   render() {
-    const { subText } = this.props;
+    const { subText, admin } = this.props;
     return (
       <div className="az-dashboard-nav">
         <nav className="nav">
@@ -19,13 +19,23 @@ class DataHeader extends React.Component {
         </nav>
 
         <nav className="nav">
-          <p className="nav-link mb-0" href="#">
-            <i className="far fa-save" />
-            <span>
-              <p className="lighter">Join date</p>
-              <p>Jan 10, 2019</p>
-            </span>
-          </p>
+          {admin ? (
+            <p className="nav-link mb-0" href="#">
+              <i className="far fa-save" />
+              <span>
+                <p className="lighter">Member strength</p>
+                <p>308</p>
+              </span>
+            </p>
+          ) : (
+            <p className="nav-link mb-0" href="#">
+              <i className="far fa-save" />
+              <span>
+                <p className="lighter">Join date</p>
+                <p>Jan 10, 2019</p>
+              </span>
+            </p>
+          )}
           <p className="nav-link mb-0" href="#">
             <i className="far fa-file-pdf" />
             <span>
@@ -49,10 +59,12 @@ class DataHeader extends React.Component {
 
 DataHeader.defaultProps = {
   subText: '',
+  admin: false
 };
 
 DataHeader.propTypes = {
-  subText: PropTypes.string
+  subText: PropTypes.string,
+  admin: PropTypes.string
 };
 
 export default DataHeader;

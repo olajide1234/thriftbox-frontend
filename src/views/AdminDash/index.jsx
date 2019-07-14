@@ -6,19 +6,19 @@ import DataHeader from '../../components/DataHeader';
 import GraphBox from '../../components/GraphBox';
 import ThreeLineCard from '../../components/ThreeLineCard';
 import TwoLineCard from '../../components/TwoLineCard';
-import QuickActions from '../../components/QuickActions';
-import UsefulContacts from '../../components/UsefulContacts';
+import AdminQuickActions from '../../components/AdminQuickActions';
+import UsefulBalances from '../../components/UsefulBalances';
 import Footer from '../../components/Footer';
 
-function UserDash(props) {
+function AdminDash(props) {
   return (
     <div>
       <Header props={props} />
       <Container>
-        <DataHeader subText="Here is a summary of your activities!" />
+        <DataHeader subText="Welcome to your admin dashboard!" admin />
         <Row>
           <Col>
-            <GraphBox title="Savings history" />
+            <GraphBox title="Total savings history" />
           </Col>
           <Col>
             <Row className="mr-0 ml-0">
@@ -26,13 +26,13 @@ function UserDash(props) {
               <TwoLineCard classStyle="mb-3 ml-2 p-2" width="48%" header="Total loans amount" text="NGN 105,000" />
             </Row>
             <Row className="mr-0 ml-0">
-              <ThreeLineCard title="Next savings details" itemOne={{ title: "Next savings due date", text: "Mar 26, 2019" }} itemTwo={{ title: "Next savings amount", text: "NGN 50,000" }} />
+              <ThreeLineCard title="Useful statistics" itemOne={{ title: "Average savings amount", text: "NGN 50,000" }} itemTwo={{ title: "Average loan amount", text: "NGN 50,000" }} />
             </Row>
           </Col>
         </Row>
         <Row className="mr-0 ml-0">
-          <QuickActions classStyle="mt-4 mb-2" history={props.history} />
-          <UsefulContacts classStyle="mt-4 mb-2" />
+          <AdminQuickActions classStyle="mt-4 mb-2" history={props.history} />
+          <UsefulBalances classStyle="mt-4 mb-2" />
         </Row>
       </Container>
       <Footer />
@@ -40,8 +40,8 @@ function UserDash(props) {
   );
 }
 
-UserDash.propTypes = {
+AdminDash.propTypes = {
   history: PropTypes.object.isRequired,
 };
 
-export default UserDash;
+export default AdminDash;
