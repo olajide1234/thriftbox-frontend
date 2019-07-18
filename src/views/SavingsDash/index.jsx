@@ -6,7 +6,7 @@ import TwoLineCard from '../../components/TwoLineCard';
 import UsefulContacts from '../../components/UsefulContacts';
 import Footer from '../../components/Footer';
 import MainTable from '../../components/MainTable';
-import SavingsChange from '../../components/SavingsChange';
+import SavingsChangeApproval from '../../components/SavingsChangeApproval';
 
 
 function SavingsDash(props) {
@@ -26,7 +26,7 @@ function SavingsDash(props) {
           </Col>
         </Row>
         <Row className="mr-0 ml-0">
-          <SavingsChange classStyle="mt-4 mb-2" />
+          <SavingsChangeApproval classStyle="mt-4 mb-2" />
           <UsefulContacts classStyle="mt-4 mb-2" />
         </Row>
       </Container>

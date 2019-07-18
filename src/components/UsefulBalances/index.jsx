@@ -65,7 +65,7 @@ UsefulBalances.propTypes = {
 };
 
 Data.propTypes = {
-  contact: PropTypes.shape.isRequired({
+  contact: PropTypes.shape({
     title: PropTypes.string.isRequired,
     amount: PropTypes.string.isRequired,
   })
