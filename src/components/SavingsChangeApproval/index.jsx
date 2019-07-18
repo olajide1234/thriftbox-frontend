@@ -4,7 +4,7 @@ import { Card, Row, Form, Col } from 'react-bootstrap';
 import LargeButton from '../LargeButton';
 
 
-class SavingsChange extends React.Component {
+class SavingsChangeApproval extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -19,8 +19,8 @@ class SavingsChange extends React.Component {
         <Card.Body>
           <div className="border-bottom">
             <span>
-              <h3 className="no-buttom-margin">Update savings amount</h3>
-              <p>Use the options below to update your savings amount</p>
+              <h3 className="no-buttom-margin">Savings change request</h3>
+              <p>Approve or reject savings change request</p>
             </span>
           </div>
           <Row className="mr-0 ml-0 d-flex justify-content-center">
@@ -46,12 +46,12 @@ class SavingsChange extends React.Component {
   }
 }
 
-SavingsChange.defaultProps = {
+SavingsChangeApproval.defaultProps = {
   classStyle: '',
 };
 
-SavingsChange.propTypes = {
+SavingsChangeApproval.propTypes = {
   classStyle: PropTypes.string,
 };
 
-export default SavingsChange;
+export default SavingsChangeApproval;
