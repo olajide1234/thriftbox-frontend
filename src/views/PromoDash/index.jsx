@@ -31,7 +31,7 @@ function PromoDash(props) {
         <DataHeader subText="Here are promo items available to you as a cooperative member" />
         <Row>
           <Col sm={9}>
-            <MainTable title="Loans details" />
+            <MainTable title="Promo items" subTitle="List of items available for purchase at discounted prices" />
           </Col>
         </Row>
         <Row className="mr-0 ml-0">
