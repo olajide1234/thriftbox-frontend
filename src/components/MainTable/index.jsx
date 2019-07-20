@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Table } from 'react-bootstrap';
 import '../../../node_modules/react-vis/dist/style.css';
+import LargeButton from '../LargeButton';
 
 class MainTable extends React.Component {
   constructor(props) {
@@ -10,12 +11,13 @@ class MainTable extends React.Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { title, subTitle, approval } = this.props;
 
     return (
       <Card style={{ width: "100%" }}>
         <Card.Body>
-          <Card.Title><h4>{title}</h4></Card.Title>
+          <h4>{title}</h4>
+          <p>{subTitle}</p>
           <Table striped bordered hover>
             <thead>
               <tr>
@@ -23,6 +25,7 @@ class MainTable extends React.Component {
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Username</th>
+                {approval ? <th /> : null}
               </tr>
             </thead>
             <tbody>
@@ -31,34 +34,72 @@ class MainTable extends React.Component {
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
+                {approval ? (
+                  <td className="d-flex justify-content-center">
+                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                  </td>
+                ) : null}
               </tr>
               <tr>
                 <td>2</td>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>@fat</td>
+                {approval ? (
+                  <td className="d-flex justify-content-center">
+                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                  </td>
+                ) : null}
               </tr>
               <tr>
                 <td>3</td>
-                <td colSpan="2">Larry the Bird</td>
+                <td>Larry the Bird</td>
                 <td>@twitter</td>
+                <td>@fat</td>
+                {approval ? (
+                  <td className="d-flex justify-content-center">
+                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                  </td>
+                ) : null}
               </tr>
               <tr>
                 <td>4</td>
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
+                {approval ? (
+                  <td className="d-flex justify-content-center">
+                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                  </td>
+                ) : null}
               </tr>
               <tr>
                 <td>5</td>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>@fat</td>
+                {approval ? (
+                  <td className="d-flex justify-content-center">
+                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                  </td>
+                ) : null}
               </tr>
               <tr>
                 <td>6</td>
-                <td colSpan="2">Larry the Bird</td>
+                <td>Larry the Bird</td>
                 <td>@twitter</td>
+                <td>@fat</td>
+                {approval ? (
+                  <td className="d-flex justify-content-center">
+                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                  </td>
+                ) : null}
               </tr>
             </tbody>
           </Table>
@@ -74,10 +115,13 @@ class MainTable extends React.Component {
 
 MainTable.defaultProps = {
   title: '',
+  subTitle: '',
 };
 
 MainTable.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  approval: PropTypes.bool.isRequired
 };
 
 export default MainTable;

@@ -8,6 +8,7 @@ import PromoDash from '../views/PromoDash';
 import AdminDash from '../views/AdminDash';
 import AdminSavings from '../views/AdminSavings';
 import AdminLoans from '../views/AdminLoans';
+import AdminPromo from '../views/AdminPromo';
 
 
 const Routes = () => (
@@ -20,6 +21,7 @@ const Routes = () => (
     <Route path="/admindashboard" exact component={AdminDash} />
     <Route path="/adminsavings" exact component={AdminSavings} />
     <Route path="/adminloans" exact component={AdminLoans} />
+    <Route path="/adminpromo" exact component={AdminPromo} />
   </Switch>
 );
 
