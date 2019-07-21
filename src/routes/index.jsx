@@ -10,6 +10,7 @@ import AdminSavings from '../views/AdminSavings';
 import AdminLoans from '../views/AdminLoans';
 import AdminPromo from '../views/AdminPromo';
 import AdminAccounting from '../views/AdminAccounting';
+import AdminMembers from '../views/AdminMembers';
 
 
 const Routes = () => (
@@ -24,6 +25,7 @@ const Routes = () => (
     <Route path="/adminloans" exact component={AdminLoans} />
     <Route path="/adminpromo" exact component={AdminPromo} />
     <Route path="/adminaccounting" exact component={AdminAccounting} />
+    <Route path="/adminmembers" exact component={AdminMembers} />
   </Switch>
 );
 
