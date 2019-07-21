@@ -31,6 +31,7 @@ class Header extends React.Component {
                 <Nav.Link className={pathname === '/savings' || pathname === '/adminsavings' ? 'activeHeader' : null} onClick={() => history.push('/savings')}>Savings</Nav.Link>
                 <Nav.Link className={pathname === '/loans' || pathname === '/adminloans' ? 'activeHeader' : null} onClick={() => history.push('/loans')}>Loans</Nav.Link>
                 <Nav.Link className={pathname === '/promo' || pathname === '/adminpromo' ? 'activeHeader' : null} onClick={() => history.push('/promo')}>Promo </Nav.Link>
+                <Nav.Link className={pathname === '/adminaccounting' ? 'activeHeader' : null} onClick={() => history.push('/adminaccounting')}>Accounting </Nav.Link>
 
               </Nav>
               <NavDropdown title="Hi Habib" id="basic-nav-dropdown">
