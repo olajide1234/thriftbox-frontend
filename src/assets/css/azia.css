@@ -41851,4 +41851,17 @@ textarea.parsley-success:focus {
   .activeHeader {
     border-bottom: 1px solid #5a24e8
   }
+
+  .addButton {
+    height: 17px;
+    width: 17px;
+    cursor: pointer;
+  }
+
+  .removeButton {
+    height: 19px;
+    width: 19px;
+    cursor: pointer;
+  }
+
   
