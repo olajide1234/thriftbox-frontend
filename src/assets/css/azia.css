@@ -41864,4 +41864,28 @@ textarea.parsley-success:focus {
     cursor: pointer;
   }
 
+  .greenButton {
+    background-color: #43A047
+  }
+
+  .greenButton:hover {
+    background-color: #4CAF50
+  }
+
+  .redButton {
+    background-color: #C62828
+  }
+
+  .redButton:hover {
+    background-color: #D32F2F
+  }
+
+  .greyButton {
+    background-color: #9E9E9E
+  }
+
+  .greyButton:hover {
+    background-color: #BDBDBD
+  }
+  
   

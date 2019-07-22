@@ -7,7 +7,9 @@ export const Store = React.createContext();
 
 const initialState = {
   episodes: [],
-  user: {}
+  user: {
+    level: 'member'
+  }
 };
 
 

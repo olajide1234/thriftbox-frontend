@@ -32,7 +32,7 @@ class EditMember extends React.Component {
                   <Form.Control type="email" id="email" />
                 </Col>
                 <Col className="mt-1">
-                  <LargeButton text="Edit" classStyle="my-2 mr-3 px-3" onClick={f => f} />
+                  <LargeButton text="Edit" classStyle="my-2 mr-3 px-3 greenButton" onClick={f => f} />
                 </Col>
               </Row>
             </Form>
@@ -73,8 +73,8 @@ class EditMember extends React.Component {
                 </Col>
               </Row>
               <Row className="mt-3 d-flex justify-content-end">
-                <LargeButton text="Update" classStyle="my-2 mr-3 px-3" onClick={f => f} />
-                <LargeButton text="Reset" classStyle="my-2 mx-3 px-4" onClick={f => f} />
+                <LargeButton text="Update" classStyle="my-2 mr-3 px-3 greenButton" onClick={f => f} />
+                <LargeButton text="Reset" classStyle="my-2 mx-3 px-4 greyButton" onClick={f => f} />
               </Row>
             </Form>
           </Row>

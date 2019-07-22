@@ -46,10 +46,10 @@ class ViewEntries extends React.Component {
                   <Form.Control type="date" id="date" />
                 </Col>
                 <Col md={1.5}>
-                  <LargeButton text="View entries" classStyle="ml-4 mt-4" onClick={f => f} />
+                  <LargeButton text="View entries" classStyle="ml-4 mt-4 greenButton" onClick={f => f} />
                 </Col>
                 <Col md={1.5}>
-                  <LargeButton text="Clear" classStyle="ml-4 mt-4" onClick={f => f} />
+                  <LargeButton text="Clear" classStyle="ml-4 mt-4 greyButton" onClick={f => f} />
                 </Col>
               </Row>
             </Form>

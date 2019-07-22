@@ -60,8 +60,8 @@ class AccountingEntry extends React.Component {
           {this.state.creditEntries.map(x => (<SingleEntry key={x} />))}
 
           <Row className="mt-3 d-flex justify-content-end">
-            <LargeButton text="Post" classStyle="my-2 mr-3 px-3" onClick={f => f} />
-            <LargeButton text="Reset" classStyle="my-2 mx-3 px-4" onClick={f => f} />
+            <LargeButton text="Post" classStyle="my-2 mr-3 px-3 greenButton" onClick={f => f} />
+            <LargeButton text="Reset" classStyle="my-2 mx-3 px-4 redButton" onClick={f => f} />
           </Row>
 
         </Card.Body>

@@ -36,8 +36,8 @@ class MainTable extends React.Component {
                 <td>@mdo</td>
                 {approval ? (
                   <td className="d-flex justify-content-center">
-                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
-                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                    <LargeButton text="Edit" classStyle="px-4 greyButton" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3 redButton" onClick={f => f} />
                   </td>
                 ) : null}
               </tr>
@@ -48,8 +48,8 @@ class MainTable extends React.Component {
                 <td>@fat</td>
                 {approval ? (
                   <td className="d-flex justify-content-center">
-                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
-                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                    <LargeButton text="Edit" classStyle="px-4 greyButton" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3 redButton" onClick={f => f} />
                   </td>
                 ) : null}
               </tr>
@@ -60,8 +60,8 @@ class MainTable extends React.Component {
                 <td>@fat</td>
                 {approval ? (
                   <td className="d-flex justify-content-center">
-                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
-                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                    <LargeButton text="Edit" classStyle="px-4 greyButton" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3 redButton" onClick={f => f} />
                   </td>
                 ) : null}
               </tr>
@@ -72,8 +72,8 @@ class MainTable extends React.Component {
                 <td>@mdo</td>
                 {approval ? (
                   <td className="d-flex justify-content-center">
-                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
-                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                    <LargeButton text="Edit" classStyle="px-4 greyButton" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3 redButton" onClick={f => f} />
                   </td>
                 ) : null}
               </tr>
@@ -84,8 +84,8 @@ class MainTable extends React.Component {
                 <td>@fat</td>
                 {approval ? (
                   <td className="d-flex justify-content-center">
-                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
-                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                    <LargeButton text="Edit" classStyle="px-4 greyButton" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3 redButton" onClick={f => f} />
                   </td>
                 ) : null}
               </tr>
@@ -96,8 +96,8 @@ class MainTable extends React.Component {
                 <td>@fat</td>
                 {approval ? (
                   <td className="d-flex justify-content-center">
-                    <LargeButton text="Edit" classStyle="px-4" onClick={f => f} />
-                    <LargeButton text="Delete" classStyle="px-4 ml-3" onClick={f => f} />
+                    <LargeButton text="Edit" classStyle="px-4 greyButton" onClick={f => f} />
+                    <LargeButton text="Delete" classStyle="px-4 ml-3 redButton" onClick={f => f} />
                   </td>
                 ) : null}
               </tr>

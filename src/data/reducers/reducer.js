@@ -1,4 +1,4 @@
-import { LOGIN, CURRENT_USER } from "../actions/actionTypes";
+import { LOGIN, CURRENT_USER, SWITCH_USER } from "../actions/actionTypes";
 
 
 export function reducer(state, action) {
@@ -10,6 +10,10 @@ export function reducer(state, action) {
     case CURRENT_USER:
 
       return { ...state, user: action.payload.currentUser };
+
+    case SWITCH_USER:
+
+      return { ...state, user: action.payload };
 
     default:
 

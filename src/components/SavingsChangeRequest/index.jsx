@@ -20,9 +20,9 @@ const requests = () => (
     <Col className="pl-0">
       <p className="mt-3 mb-2">24 April 2019</p>
     </Col>
-    <LargeButton text="Approve" classStyle="mt-2 mb-2 px-4" onClick={f => f} />
+    <LargeButton text="Approve" classStyle="mt-2 mb-2 px-4 greenButton" onClick={f => f} />
     <Col>
-      <LargeButton text="Reject" classStyle="mt-2 mb-2 px-4" onClick={f => f} />
+      <LargeButton text="Reject" classStyle="mt-2 mb-2 px-4 redButton" onClick={f => f} />
     </Col>
   </Row>
 );

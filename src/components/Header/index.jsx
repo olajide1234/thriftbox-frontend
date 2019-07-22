@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { Store } from '../../data/store';
+import { switchUser } from '../../data/actions/auth';
 
 
 class Header extends React.Component {
@@ -9,9 +11,13 @@ class Header extends React.Component {
     this.state = {};
   }
 
+  switchAuthAccess = (dispatch, level) => {
+    switchUser(dispatch, level);
+  }
 
   render() {
     const { props: { history, location: { pathname } } } = this.props;
+    const values = this.context;
     return (
       <div>
         <Navbar bg="white" expand="lg" className="header-shadow fixed-top">
@@ -27,16 +33,32 @@ class Header extends React.Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
 
-                <Nav.Link className={pathname === '/dashboard' || pathname === '/admindashboard' ? 'activeHeader' : null} onClick={() => history.push('/dashboard')}>Dashboard</Nav.Link>
-                <Nav.Link className={pathname === '/savings' || pathname === '/adminsavings' ? 'activeHeader' : null} onClick={() => history.push('/savings')}>Savings</Nav.Link>
-                <Nav.Link className={pathname === '/loans' || pathname === '/adminloans' ? 'activeHeader' : null} onClick={() => history.push('/loans')}>Loans</Nav.Link>
-                <Nav.Link className={pathname === '/promo' || pathname === '/adminpromo' ? 'activeHeader' : null} onClick={() => history.push('/promo')}>Promo </Nav.Link>
-                <Nav.Link className={pathname === '/adminaccounting' ? 'activeHeader' : null} onClick={() => history.push('/adminaccounting')}>Accounting </Nav.Link>
-                <Nav.Link className={pathname === '/adminmembers' ? 'activeHeader' : null} onClick={() => history.push('/adminmembers')}>Members </Nav.Link>
+                {values.state.user.level === 'admin'
+                  ? (
+                    <Fragment>
+                      <Nav.Link className={pathname === '/admindashboard' ? 'activeHeader' : null} onClick={() => history.push('/admindashboard')}>Dashboard</Nav.Link>
+                      <Nav.Link className={pathname === '/adminsavings' ? 'activeHeader' : null} onClick={() => history.push('/adminsavings')}>Savings</Nav.Link>
+                      <Nav.Link className={pathname === '/adminloans' ? 'activeHeader' : null} onClick={() => history.push('/adminloans')}>Loans</Nav.Link>
+                      <Nav.Link className={pathname === '/adminpromo' ? 'activeHeader' : null} onClick={() => history.push('/adminpromo')}>Promo </Nav.Link>
+                      <Nav.Link className={pathname === '/adminaccounting' ? 'activeHeader' : null} onClick={() => history.push('/adminaccounting')}>Accounting </Nav.Link>
+                      <Nav.Link className={pathname === '/adminmembers' ? 'activeHeader' : null} onClick={() => history.push('/adminmembers')}>Members </Nav.Link>
+                    </Fragment>
+                  )
+                  : (
+                    <Fragment>
+                      <Nav.Link className={pathname === '/dashboard' ? 'activeHeader' : null} onClick={() => history.push('/dashboard')}>Dashboard</Nav.Link>
+                      <Nav.Link className={pathname === '/savings' ? 'activeHeader' : null} onClick={() => history.push('/savings')}>Savings</Nav.Link>
+                      <Nav.Link className={pathname === '/loans' ? 'activeHeader' : null} onClick={() => history.push('/loans')}>Loans</Nav.Link>
+                      <Nav.Link className={pathname === '/promo' ? 'activeHeader' : null} onClick={() => history.push('/promo')}>Promo </Nav.Link>
+                    </Fragment>
+                  )
+                }
 
               </Nav>
               <NavDropdown title="Hi Habib" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+                {values.state.user.level === 'admin'
+                  ? <NavDropdown.Item onClick={() => { this.switchAuthAccess(values.dispatch, 'member'); history.push('/dashboard'); }}>Member view</NavDropdown.Item>
+                  : <NavDropdown.Item onClick={() => { this.switchAuthAccess(values.dispatch, 'admin'); history.push('/admindashboard'); }}>Admin view</NavDropdown.Item>}
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={() => history.push('/')}>Sign Out</NavDropdown.Item>
               </NavDropdown>
@@ -48,6 +70,9 @@ class Header extends React.Component {
     );
   }
 }
+
+Header.contextType = Store;
+
 Header.propTypes = {
   props: PropTypes.object.isRequired
 };

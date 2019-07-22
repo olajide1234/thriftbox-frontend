@@ -99,7 +99,7 @@ class PromoAdmin extends React.Component {
             </Table>
           </Row>
           <Row className="d-flex justify-content-end mr-4">
-            <LargeButton type="submit" text="Clear list" classStyle="pl-3 pr-3 mt-4 mr-1" />
+            <LargeButton type="submit" text="Clear list" classStyle="pl-3 pr-3 mt-4 mr-1 greyButton" />
             <LargeButton type="submit" text="Publish items" classStyle="pl-3 pr-3 mt-4 ml-1" />
           </Row>
         </Card.Body>
