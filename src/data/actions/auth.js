@@ -1,3 +1,4 @@
+import { SWITCH_USER } from "./actionTypes";
 
 
 export const loginUser = async (dispatch) => {
@@ -8,3 +9,10 @@ export const loginUser = async (dispatch) => {
     payload: dataJSON._embedded.episodes
   });
 };
+
+export const switchUser = async (dispatch, auth) => dispatch({
+  type: SWITCH_USER,
+  payload: {
+    level: auth
+  }
+});

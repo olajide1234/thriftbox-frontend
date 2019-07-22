@@ -42,13 +42,13 @@ class ViewFs extends React.Component {
                   </Form.Control>
                 </Col>
                 <Col md={2}>
-                  <LargeButton text="View draft P or L" classStyle="mt-4" onClick={f => f} />
+                  <LargeButton text="View draft P or L" classStyle="mt-4 greenButton" onClick={f => f} />
                 </Col>
                 <Col md={2}>
-                  <LargeButton text="View draft SFP" classStyle="mt-4" onClick={f => f} />
+                  <LargeButton text="View draft SFP" classStyle="mt-4 greenButton" onClick={f => f} />
                 </Col>
                 <Col md={2}>
-                  <LargeButton text="View draft TB" classStyle="mt-4" onClick={f => f} />
+                  <LargeButton text="View draft TB" classStyle="mt-4 greenButton" onClick={f => f} />
                 </Col>
               </Row>
             </Form>

@@ -54,8 +54,8 @@ const request = () => (
         <p className="no-buttom-margin">65752 Akinwumni Ambode approved on 27/May/2018</p>
       </div>
       <Row className="mt-3">
-        <Col className="d-flex justify-content-center"><LargeButton text="Approve" classStyle="mt-2 mb-2 px-3" onClick={f => f} /></Col>
-        <Col className="d-flex justify-content-center"><LargeButton text="Reject" classStyle="mt-2 mb-2 px-4" onClick={f => f} /></Col>
+        <Col className="d-flex justify-content-center"><LargeButton text="Approve" classStyle="mt-2 mb-2 px-3 greenButton" onClick={f => f} /></Col>
+        <Col className="d-flex justify-content-center"><LargeButton text="Reject" classStyle="mt-2 mb-2 px-4 redButton" onClick={f => f} /></Col>
       </Row>
     </Card.Body>
   </Card>
