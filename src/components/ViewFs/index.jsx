@@ -18,6 +18,9 @@ class ViewFs extends React.Component {
         <Card.Body>
           <div className="border-bottom">
             <span>
+              <div className="float-right">
+                <button onClick={f => f}> Download</button>
+              </div>
               <h3 className="no-buttom-margin">View financial statements</h3>
               <p>View summaries of the financial records</p>
             </span>
@@ -26,7 +29,7 @@ class ViewFs extends React.Component {
 
           <Row className="mr-0 ml-0 mt-3">
             <Form className="mt-2 mb-2" style={{ width: "100%" }}>
-              <Row className="d-flex align-items-center">
+              <Row className="d-flex justify-content-between">
                 <Col md={3}>
                   <label htmlFor="book">Select book</label>
                   <Form.Control as="select" id="book">
@@ -34,12 +37,8 @@ class ViewFs extends React.Component {
                     <option>Second book</option>
                   </Form.Control>
                 </Col>
-                <Col md={3}>
-                  <label htmlFor="account"> Select account </label>
-                  <Form.Control as="select" id="account">
-                    <option>Asset</option>
-                    <option>Liability</option>
-                  </Form.Control>
+                <Col md={2}>
+                  <LargeButton text="View current COA" classStyle="mt-4 greenButton" onClick={f => f} />
                 </Col>
                 <Col md={2}>
                   <LargeButton text="View draft P or L" classStyle="mt-4 greenButton" onClick={f => f} />

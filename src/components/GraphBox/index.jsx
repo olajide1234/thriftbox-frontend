@@ -15,16 +15,18 @@ class GraphBox extends React.Component {
     const { title } = this.props;
 
     const data = [
-      { x: 0, y: 8 },
-      { x: 1, y: 5 },
-      { x: 2, y: 4 },
-      { x: 3, y: 9 },
-      { x: 4, y: 1 },
-      { x: 5, y: 7 },
-      { x: 6, y: 6 },
-      { x: 7, y: 3 },
-      { x: 8, y: 2 },
-      { x: 9, y: 0 }
+      { x: 'Jan', y: 80000 },
+      { x: 'Feb', y: 50000 },
+      { x: 'Mar', y: 40000 },
+      { x: 'Apr', y: 90000 },
+      { x: 'May', y: 10000 },
+      { x: 'Jun', y: 70000 },
+      { x: 'Jul', y: 60000 },
+      { x: 'Aug', y: 30000 },
+      { x: 'Sept', y: 20000 },
+      { x: 'Oct', y: 0 },
+      { x: 'Nov', y: 30000 },
+      { x: 'Dec', y: 40000 },
     ];
 
 
@@ -32,7 +34,7 @@ class GraphBox extends React.Component {
       <Card style={{ width: "100%" }}>
         <Card.Body>
           <Card.Title><h4>{title}</h4></Card.Title>
-          <XYPlot margin={50} width={600} height={300}>
+          <XYPlot margin={50} width={600} height={300} xType="ordinal">
             <VerticalGridLines />
             <HorizontalGridLines />
             <XAxis />
