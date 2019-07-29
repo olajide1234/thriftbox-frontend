@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Row, Form, Col } from 'react-bootstrap';
+import Autocomplete from '../Autocomplete';
 
 function SingleEntry() {
   return (
@@ -7,7 +8,7 @@ function SingleEntry() {
       <Card.Body>
         <Row className="mr-0 ml-0">
           <Form className="mt-2 mb-2" style={{ width: "100%" }}>
-            <Row className="d-flex align-items-center">
+            <Row className="d-flex">
               <Col md={3}>
                 <label htmlFor="account">Select account</label>
                 <Form.Control as="select" id="account">
@@ -21,10 +22,16 @@ function SingleEntry() {
               </Col>
               <Col md={3}>
                 <label htmlFor="subaccount"> Sub-account </label>
-                <Form.Control as="select" id="subaccount">
-                  <option>Habib Akinwale</option>
-                  <option>John Bull</option>
-                </Form.Control>
+                <Autocomplete
+                    suggestions={[
+                      "Femi Otedola",
+                      "Seun John",
+                      "Habib Akinwale",
+                      "John Bull",
+                      "Femi Awolowo",
+                    ]}
+                    id="subaccount"
+                  />
               </Col>
               <Col md={4}>
                 <label htmlFor="description"> Memo </label>
