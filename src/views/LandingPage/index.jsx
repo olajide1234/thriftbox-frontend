@@ -10,10 +10,10 @@ import { loginUser } from '../../data/actions/auth';
 const LandingPage = ({ history, loading }) => {
   const { state, dispatch } = React.useContext(Store);
 
-  React.useEffect(() => {
-    state.episodes.length === 0
-      && loginUser(dispatch);
-  });
+  // React.useEffect(() => {
+  //   state.episodes.length === 0
+  //     && loginUser(dispatch);
+  // });
 
   const [userCredentials, setUserCredentials] = useState({
     email: null,
@@ -32,13 +32,11 @@ const LandingPage = ({ history, loading }) => {
 
   async function onSubmit(event) {
     event.preventDefault();
-    // const loginRes = await loginUser(dispatch, userCredentials);
-    return history.push('/dashboard');
-
-    // if (!Array.isArray(loginRes)) {
-    //   return history.push('/');
-    // }
-    // return setErrors(loginRes);
+    const loginRes = await loginUser(dispatch, userCredentials);
+    if (loginRes.success === true) {
+      return history.push('/dashboard');
+    }
+    return setErrors([loginRes.message]);
   }
 
   return (
@@ -83,13 +81,13 @@ const LandingPage = ({ history, loading }) => {
                 <div className="form-group">
                   <label style={{ display: 'block' }}>
                     Email
-                    <input type="text" className="form-control" placeholder="Enter your email" onChange={updateLocalState} />
+                    <input type="text" name="email" className="form-control" placeholder="Enter your email" onChange={updateLocalState} />
                   </label>
                 </div>
                 <div className="form-group">
                   <label style={{ display: 'block' }}>
                     Password
-                    <input type="password" className="form-control" placeholder="Enter your password" onChange={updateLocalState} />
+                    <input type="password" name="password" className="form-control" placeholder="Enter your password" onChange={updateLocalState} />
                   </label>
                 </div>
                 <button className="btn btn-az-primary btn-block">Sign in</button>
