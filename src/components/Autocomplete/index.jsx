@@ -82,7 +82,7 @@ class Autocomplete extends Component {
         userInput
       },
       props: {
-        id
+        id, optionClick
       }
     } = this;
 
@@ -101,7 +101,11 @@ class Autocomplete extends Component {
               }
 
               return (
-                <li className={className} id={id} key={suggestion} onClick={onClick}>
+                <li
+                  className={className}
+                  id={id} key={suggestion}
+                  // onKeyUp={(e) => { console.log('key', e); e.keyCode === 13 ? optionClick(e) : null }}
+                  onClick={(e) => { onClick(e); optionClick(e) }}>
                   {suggestion}
                 </li>
               );

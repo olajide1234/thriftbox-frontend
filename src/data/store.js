@@ -6,10 +6,7 @@ import { CURRENT_USER } from './actions/actionTypes';
 export const Store = React.createContext();
 
 const initialState = {
-  episodes: [],
-  user: {
-    level: 'member'
-  }
+  user: {}
 };
 
 
@@ -20,7 +17,7 @@ export function StoreProvider(props) {
   const user = localStorage.getItem('user');
   const token = localStorage.getItem('token');
 
-  if (user && token) {
+  if (user && token && !(JSON.stringify(state.user) === user)) {
     dispatch({
       type: CURRENT_USER,
       payload: {

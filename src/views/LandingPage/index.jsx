@@ -8,12 +8,7 @@ import { Store } from '../../data/store';
 import { loginUser } from '../../data/actions/auth';
 
 const LandingPage = ({ history, loading }) => {
-  const { state, dispatch } = React.useContext(Store);
-
-  // React.useEffect(() => {
-  //   state.episodes.length === 0
-  //     && loginUser(dispatch);
-  // });
+  const { dispatch } = React.useContext(Store);
 
   const [userCredentials, setUserCredentials] = useState({
     email: null,
