@@ -4,7 +4,7 @@ import { Card, Table } from 'react-bootstrap';
 import '../../../node_modules/react-vis/dist/style.css';
 import LargeButton from '../LargeButton';
 
-class MainTable extends React.Component {
+class DebtTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -23,19 +23,35 @@ class MainTable extends React.Component {
               <tr>
                 <th>S/N</th>
                 <th>Date</th>
-                <th>Amount</th>
-                <th>Is entry voided ?</th>
-                <th>Void reason</th>
+                <th>Loan amount</th>
+                <th>Interest</th>
+                <th>Fees</th>
+                <th>Tenure</th>
+                <th>Repayment</th>
+                <th>Guarantor 1</th>
+                <th>Guarantor 2</th>
+                <th>Guarantor 3</th>
+                <th>Status</th>
+                <th>Type</th>
+                <th>Comments</th>
                 {approval ? <th /> : null}
               </tr>
             </thead>
             <tbody>
               {data.map((entry, index) => <tr>
                 <td>{index + 1}</td>
-                <td>{`${new Date(entry.timestamp)}`}</td>
-                <td>{`${entry.currency} ${entry.debit - entry.credit}`}</td>
-                <td>{entry.voided ? entry.voided : 'No'}</td>
-                <td>{entry.voidReason ? entry.voidReason : 'N/A'}</td>
+                <td>{`${new Date(entry.createdAt)}`}</td>
+                <td>{entry.loanAmount}</td>
+                <td>{entry.interest}</td>
+                <td>{entry.fees}</td>
+                <td>{entry.tenure}</td>
+                <td>{entry.repayment}</td>
+                <td>{entry.guarantor1}</td>
+                <td>{entry.guarantor2}</td>
+                <td>{entry.guarantor3}</td>
+                <td>{entry.status}</td>
+                <td>{entry.type}</td>
+                <td>{entry.comments}</td>
                 {approval ? (
                   <td className="d-flex justify-content-center">
                     <LargeButton text="Edit" classStyle="px-4 greyButton" onClick={f => f} />
@@ -55,15 +71,15 @@ class MainTable extends React.Component {
   }
 }
 
-MainTable.defaultProps = {
+DebtTable.defaultProps = {
   title: '',
   subTitle: '',
 };
 
-MainTable.propTypes = {
+DebtTable.propTypes = {
   title: PropTypes.string,
   subTitle: PropTypes.string,
   approval: PropTypes.bool.isRequired
 };
 
-export default MainTable;
+export default DebtTable;

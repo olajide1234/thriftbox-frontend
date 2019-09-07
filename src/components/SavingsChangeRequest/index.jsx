@@ -1,76 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Row, Col, } from 'react-bootstrap';
+import { Card, Row, Form, Col } from 'react-bootstrap';
 import LargeButton from '../LargeButton';
+import { changeSavings } from '../../data/actions/account';
 
-const requests = () => (
-  <Row>
-    <Col className="pr-0">
-      <p className="mt-3 mb-2">74543</p>
-    </Col>
-    <Col className="pl-0 pr-0">
-      <p className="mt-3 mb-2">Akinwale Habib</p>
-    </Col>
-    <Col className="pl-0 pr-0">
-      <p className="mt-3 mb-2">60,000</p>
-    </Col>
-    <Col className="pl-0 pr-0">
-      <p className="mt-3 mb-2">70,000</p>
-    </Col>
-    <Col className="pl-0">
-      <p className="mt-3 mb-2">24 April 2019</p>
-    </Col>
-    <LargeButton text="Approve" classStyle="mt-2 mb-2 px-4 greenButton" onClick={f => f} />
-    <Col>
-      <LargeButton text="Reject" classStyle="mt-2 mb-2 px-4 redButton" onClick={f => f} />
-    </Col>
-  </Row>
-);
 
-class SavingsChangeApproval extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+const SavingsChangeRequest = ({ classStyle, setErrors }) => {
+
+  const [newSavingsData, setnewSavingsData] = useState({
+    nextSavingsAmount: null,
+    nextSavingsDate: null
+  });
+
+  function updateLocalState(event) {
+    setnewSavingsData({ ...newSavingsData, [event.target.name]: event.target.value });
   }
 
+  async function onSubmit(event) {
+    event.preventDefault();
+    const result = await changeSavings(newSavingsData);
+    if (result.success === true) {
+      return window.location.reload();
+    }
 
-  render() {
-    const { classStyle } = this.props;
-
-    return (
-      <Card className={classStyle} style={{ width: "100%" }}>
-        <Card.Body>
-          <div className="border-bottom">
-            <span>
-              <h3 className="no-buttom-margin mb-4">Pending savings amount change request</h3>
-              <Row className="pl-3">
-                <Col>Member ID</Col>
-                <Col>Member name</Col>
-                <Col>Old savings</Col>
-                <Col>New savings</Col>
-                <Col>Start date</Col>
-                <Col />
-                <Col />
-              </Row>
-            </span>
-          </div>
-          <Row className="mr-0 ml-2 d-flex justify-content-center">
-            <Card className="mt-4 pl-2" style={{ width: '100%' }}>
-              {requests()}
-            </Card>
-          </Row>
-        </Card.Body>
-      </Card>
-    );
+    return setErrors([result.message]);
   }
+
+  return (
+    <Card className={classStyle} style={{ width: "100%" }}>
+      <Card.Body>
+        <div className="border-bottom">
+          <span>
+            <h3 className="no-buttom-margin">Savings change request</h3>
+            <p>Request a change in your savings amount or date</p>
+          </span>
+        </div>
+        <Row className="mr-0 ml-0 d-flex justify-content-center">
+          <Form className="mt-4 mb-3">
+            <Row className="d-flex align-items-center">
+              <Col>
+                <label htmlFor="nextSavingsAmount"> New savings amount </label>
+                <Form.Control type="number" name="nextSavingsAmount" id="nextSavingsAmount" onChange={updateLocalState} />
+              </Col>
+              <Col>
+                <label htmlFor="nextSavingsDate">Day</label>
+                <Form.Control type="number" name="nextSavingsDate" id="day" onChange={updateLocalState} />
+              </Col>
+              <Col>
+                <LargeButton type="submit" text="Submit" onClick={onSubmit} classStyle="pl-5 pr-5 mt-4" />
+              </Col>
+            </Row>
+          </Form>
+        </Row>
+      </Card.Body>
+    </Card>
+  );
 }
 
-SavingsChangeApproval.defaultProps = {
+SavingsChangeRequest.defaultProps = {
   classStyle: '',
 };
 
-SavingsChangeApproval.propTypes = {
+SavingsChangeRequest.propTypes = {
   classStyle: PropTypes.string,
 };
 
-export default SavingsChangeApproval;
+export default SavingsChangeRequest;

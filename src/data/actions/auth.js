@@ -17,12 +17,24 @@ export const loginUser = async (dispatch, payload) => {
   }
 
   if (data.success === true) {
-    dispatch({
-      type: 'LOGIN',
-      payload: data.data.user
-    });
+    localStorage.setItem('token', data.data.token)
+    localStorage.setItem('user', JSON.stringify(data.data.user))
     return data
   }
+};
+
+export const userDetails = async (dispatch, payload) => {
+  const response = await fetch('http://localhost:5000/users/', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-access-token': localStorage.getItem('token'),
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(payload),
+  })
+  let data = await response.json();
+  return data
 };
 
 export const switchUser = async (dispatch, auth) => dispatch({

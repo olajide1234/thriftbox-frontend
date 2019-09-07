@@ -41930,3 +41930,16 @@ textarea.parsley-success:focus {
 .suggestions li:not(:last-of-type) {
   border-bottom: 1px solid #999;
 }
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.center-width {
+  left: 50%;
+}
