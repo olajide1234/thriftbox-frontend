@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Row } from 'react-bootstrap';
 import LargeButton from '../LargeButton';
@@ -6,68 +6,68 @@ import add from '../../assets/img/plusb.png';
 import remove from '../../assets/img/remove.png';
 import SingleEntry from '../SingleEntry';
 
-class AccountingEntry extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      debitEntries: [1],
-      creditEntries: [1]
-    };
+function AccountingEntry({ classStyle }) {
+
+  const [debitEntries, setdebitEntries] = useState([1]);
+  const [creditEntries, setcreditEntries] = useState([1]);
+
+  function addSingleDebitEntry(initialState) {
+    setdebitEntries([...initialState, (initialState.length + 1)]);
   }
 
-  addSingleEntry = (initialState) => {
-    const copyOfInitial = initialState;
-    copyOfInitial.push(copyOfInitial.length + 1);
-    this.setState({ [initialState]: copyOfInitial });
+  function addSingleCreditEntry(initialState) {
+    setcreditEntries([...initialState, (initialState.length + 1)]);
   }
 
-  removeSingleEntry = (initialState) => {
-    const copyOfInitial = initialState;
-    if (copyOfInitial.length > 1) {
-      copyOfInitial.pop();
-      this.setState({ [initialState]: copyOfInitial });
+  function removeSingleDebitEntry(initialState) {
+    if (initialState.length > 1) {
+      initialState.pop();
+      setdebitEntries([...initialState]);
     }
   }
 
-  render() {
-    const { classStyle } = this.props;
-    const { debitEntries, creditEntries } = this.state;
-
-    return (
-      <Card className={classStyle} style={{ width: "100%" }}>
-        <Card.Body>
-          <div className="border-bottom">
-            <span>
-              <h3 className="no-buttom-margin">Post a new accounting entry</h3>
-              <p>Create a new entry into the financial records</p>
-            </span>
-          </div>
-          <div className="d-flex justify-content-between mt-5">
-            <h5>Debit</h5>
-            <div>
-              <img className="addButton mx-3" src={add} alt="Add more fields" onClick={() => this.addSingleEntry(debitEntries)} />
-              <img className="removeButton" src={remove} alt="Add last field" onClick={() => this.removeSingleEntry(debitEntries)} />
-            </div>
-          </div>
-          {this.state.debitEntries.map(x => (<SingleEntry key={x} />))}
-          <div className="d-flex justify-content-between mt-5">
-            <h5>Credit</h5>
-            <div>
-              <img className="addButton mx-3" src={add} alt="Add more fields" onClick={() => this.addSingleEntry(creditEntries)} />
-              <img className="removeButton" src={remove} alt="Remove last field" onClick={() => this.removeSingleEntry(creditEntries)} />
-            </div>
-          </div>
-          {this.state.creditEntries.map(x => (<SingleEntry key={x} />))}
-
-          <Row className="mt-3 d-flex justify-content-end">
-            <LargeButton text="Post" classStyle="my-2 mr-3 px-3 greenButton" onClick={f => f} />
-            <LargeButton text="Reset" classStyle="my-2 mx-3 px-4 redButton" onClick={f => f} />
-          </Row>
-
-        </Card.Body>
-      </Card>
-    );
+  function removeSingleCreditEntry(initialState) {
+    if (initialState.length > 1) {
+      initialState.pop();
+      setcreditEntries([...initialState]);
+    }
   }
+
+  console.log('debit', debitEntries);
+  return (
+    <Card className={classStyle} style={{ width: "100%" }}>
+      <Card.Body>
+        <div className="border-bottom">
+          <span>
+            <h3 className="no-buttom-margin">Post a new accounting entry</h3>
+            <p>Create a new entry into the financial records</p>
+          </span>
+        </div>
+        <div className="d-flex justify-content-between mt-5">
+          <h5>Debit</h5>
+          <div>
+            <img className="addButton mx-3" src={add} alt="Add more fields" onClick={() => addSingleDebitEntry(debitEntries)} />
+            <img className="removeButton" src={remove} alt="Add last field" onClick={() => removeSingleDebitEntry(debitEntries)} />
+          </div>
+        </div>
+        {debitEntries.map(x => (<SingleEntry key={x} />))}
+        <div className="d-flex justify-content-between mt-5">
+          <h5>Credit</h5>
+          <div>
+            <img className="addButton mx-3" src={add} alt="Add more fields" onClick={() => addSingleCreditEntry(creditEntries)} />
+            <img className="removeButton" src={remove} alt="Remove last field" onClick={() => removeSingleCreditEntry(creditEntries)} />
+          </div>
+        </div>
+        {creditEntries.map(x => (<SingleEntry key={x} />))}
+
+        <Row className="mt-3 d-flex justify-content-end">
+          <LargeButton text="Post" classStyle="my-2 mr-3 px-3 greenButton" onClick={f => f} />
+          <LargeButton text="Reset" classStyle="my-2 mx-3 px-4 redButton" onClick={f => f} />
+        </Row>
+
+      </Card.Body>
+    </Card>
+  );
 }
 
 AccountingEntry.defaultProps = {

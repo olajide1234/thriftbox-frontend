@@ -18,11 +18,11 @@ function LoansRequest({ classStyle, setErrors }) {
     setloanApplication({ ...loanApplication, [event.target.name]: event.target.value });
   }
 
-  function updateGuarantor1(name) {
-    setloanApplication({ ...loanApplication, guarantor1: nameId[name] });
+  function updateguarantor1Id(name) {
+    setloanApplication({ ...loanApplication, guarantor1Id: nameId[name] });
   }
 
-  function updateGuarantor2(name) {
+  function updateguarantor2Id(name) {
     setloanApplication({ ...loanApplication, guarantor2: nameId[name] });
   }
 
@@ -75,19 +75,19 @@ function LoansRequest({ classStyle, setErrors }) {
                 <Form.Control id="loanAmount" type='number' name="loanAmount" onChange={updateLocalState} />
               </Col>
               <Col md={2}>
-                <label htmlFor="guarantor1">Choose Guarantor 1</label>
+                <label htmlFor="guarantor1Id">Choose Guarantor 1</label>
                 <Autocomplete
                   suggestions={names}
-                  optionClick={(e) => updateGuarantor1(e.currentTarget.innerText)}
-                  id="guarantor1"
+                  optionClick={(e) => updateguarantor1Id(e.currentTarget.innerText)}
+                  id="guarantor1Id"
                 />
               </Col>
               <Col md={2}>
-                <label htmlFor="guarantor2">Choose Guarantor 2</label>
+                <label htmlFor="guarantor2Id">Choose Guarantor 2</label>
                 <Autocomplete
                   suggestions={names}
-                  optionClick={(e) => updateGuarantor2(e.currentTarget.innerText)}
-                  id="guarantor2"
+                  optionClick={(e) => updateguarantor2Id(e.currentTarget.innerText)}
+                  id="guarantor2Id"
                 />
               </Col>
               <Col md={2}>

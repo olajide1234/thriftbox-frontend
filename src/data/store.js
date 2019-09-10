@@ -6,7 +6,8 @@ import { CURRENT_USER } from './actions/actionTypes';
 export const Store = React.createContext();
 
 const initialState = {
-  user: {}
+  user: {},
+  view: { level: 'non-admin' }
 };
 
 

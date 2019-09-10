@@ -79,7 +79,16 @@ function UserDash(props) {
               <TwoLineCard classStyle="mb-3 ml-2 p-2" width="48%" header="Total loans amount" text={`NGN ${userLoansAndSavingsState.loansBalance.balance.toLocaleString()}`} />
             </Row>
             <Row className="mr-0 ml-0">
-              <ThreeLineCard title="Next savings details" itemOne={{ title: "Savings due date", text: `${ordinal_suffix_of(userDetailsState.nextSavingsDate)} of the month` }} itemTwo={{ title: "Next savings amount", text: `NGN ${userDetailsState.nextSavingsAmount.toLocaleString()}` }} />
+              <ThreeLineCard
+                title="Next savings details"
+                itemOne={{
+                  title: `${userDetailsState.savingsDateAndAmountApproval === 'pending' ? "Savings due date (Pending approval)" : "Savings due date"}`,
+                  text: `${ordinal_suffix_of(userDetailsState.nextSavingsDate)} of the month`
+                }}
+                itemTwo={{
+                  title: `${userDetailsState.savingsDateAndAmountApproval === 'pending' ? "Next savings amount (Pending approval)" : "Next savings amount"}`,
+                  text: `NGN ${userDetailsState.nextSavingsAmount.toLocaleString()}`
+                }} />
             </Row>
           </Col>
         </Row>

@@ -9,7 +9,7 @@ class DataHeader extends React.Component {
   }
 
   render() {
-    const { subText, admin, name, joinDate, memberId, organization } = this.props;
+    const { subText, admin, name, joinDate, memberId, organization, memberStrenght } = this.props;
     return (
       <div className="az-dashboard-nav">
         <nav className="nav">
@@ -25,7 +25,7 @@ class DataHeader extends React.Component {
               <i className="far fa-save" />
               <span>
                 <p className="lighter">Member strength</p>
-                <p>308</p>
+                <p>{memberStrenght}</p>
               </span>
             </p>
           ) : (
