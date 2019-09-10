@@ -13,7 +13,7 @@ export function reducer(state, action) {
 
     case SWITCH_USER:
 
-      return { ...state, user: action.payload };
+      return { ...state, view: action.payload };
 
     default:
 

@@ -46,9 +46,9 @@ class DebtTable extends React.Component {
                 <td>{entry.fees}</td>
                 <td>{entry.tenure}</td>
                 <td>{entry.repayment}</td>
-                <td>{entry.guarantor1}</td>
-                <td>{entry.guarantor2}</td>
-                <td>{entry.guarantor3}</td>
+                <td>{entry.guarantor1Id}</td>
+                <td>{entry.guarantor2Id}</td>
+                <td>{entry.guarantor3Id}</td>
                 <td>{entry.status}</td>
                 <td>{entry.type}</td>
                 <td>{entry.comments}</td>

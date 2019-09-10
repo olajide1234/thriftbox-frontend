@@ -5,12 +5,18 @@ import LargeButton from '../LargeButton';
 import { changeSavings } from '../../data/actions/account';
 
 
-const SavingsChangeRequest = ({ classStyle, setErrors }) => {
+const SavingsChangeRequest = ({ classStyle, setErrors, currDate, currAmount }) => {
 
   const [newSavingsData, setnewSavingsData] = useState({
+    prevSavingsAmount: currAmount,
+    prevSavingsDate: currDate,
     nextSavingsAmount: null,
-    nextSavingsDate: null
+    nextSavingsDate: null,
+    savingsDateAndAmountApproval: 'pending'
   });
+
+  console.log('nse', newSavingsData);
+
 
   function updateLocalState(event) {
     setnewSavingsData({ ...newSavingsData, [event.target.name]: event.target.value });

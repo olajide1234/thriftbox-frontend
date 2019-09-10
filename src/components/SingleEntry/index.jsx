@@ -23,15 +23,15 @@ function SingleEntry() {
               <Col md={3}>
                 <label htmlFor="subaccount"> Sub-account </label>
                 <Autocomplete
-                    suggestions={[
-                      "Femi Otedola",
-                      "Seun John",
-                      "Habib Akinwale",
-                      "John Bull",
-                      "Femi Awolowo",
-                    ]}
-                    id="subaccount"
-                  />
+                  suggestions={[
+                    "Femi Otedola",
+                    "Seun John",
+                    "Habib Akinwale",
+                    "John Bull",
+                    "Femi Awolowo",
+                  ]}
+                  id="subaccount"
+                />
               </Col>
               <Col md={4}>
                 <label htmlFor="description"> Memo </label>

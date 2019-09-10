@@ -13,7 +13,7 @@ class GraphBox extends React.Component {
 
   render() {
     const { title, data } = this.props;
-    const Months = [null, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+    const Months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 
     const dataArr = data.map((d) => {
       return {

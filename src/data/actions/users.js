@@ -24,7 +24,6 @@ export const allMembers = async () => {
     },
   })
   let data = await response.json();
-  console.log('all user', data);
   
   return data
 

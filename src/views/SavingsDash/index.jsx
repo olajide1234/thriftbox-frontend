@@ -72,19 +72,27 @@ function SavingsDash(props) {
           subText="Here are details of your savings history"
           memberId={userDetailsState.memberId}
           organization={userDetailsState.organization} />
-          <Row><Col md={{ span: 6, offset: 3 }}>{renderErrors(errors)}</Col></Row>
+        <Row><Col md={{ span: 6, offset: 3 }}>{renderErrors(errors)}</Col></Row>
         <Row>
           <Col sm={9}>
             {userLoansAndSavingsState.savingsTransactions.length < 1 ? 'No savings history yet. Begin saving to see a table of your savings here!' : <MainTable title="Savings details" data={userLoansAndSavingsState.savingsTransactions} />}
           </Col>
           <Col>
             <TwoLineCard classStyle="mb-3 p-2" header="Total savings amount" text={`NGN ${userLoansAndSavingsState.savingsBalance.balance.toLocaleString()}`} />
-            <TwoLineCard classStyle="mb-3 p-2" header="Next savings date" text={`${ordinal_suffix_of(userDetailsState.nextSavingsDate)} of the month`} />
-            <TwoLineCard classStyle="mb-3 p-2" header="Next savings amount" text={`NGN ${userDetailsState.nextSavingsAmount.toLocaleString()}`} />
+            <TwoLineCard
+              classStyle="mb-3 p-2"
+              header={userDetailsState.savingsDateAndAmountApproval === 'pending' ? "Savings due date (Pending approval)" : "Savings due date"}
+              text={`${ordinal_suffix_of(userDetailsState.nextSavingsDate)} of the month`}
+            />
+            <TwoLineCard
+              classStyle="mb-3 p-2"
+              header={userDetailsState.savingsDateAndAmountApproval === 'pending' ? "Next savings amount (Pending approval)" : "Next savings amount"}
+              text={`NGN ${userDetailsState.nextSavingsAmount.toLocaleString()}`}
+            />
           </Col>
         </Row>
         <Row className="mr-0 ml-0">
-          <SavingsChangeRequest setErrors={setErrors} classStyle="mt-4 mb-2" />
+          <SavingsChangeRequest currDate={userDetailsState.nextSavingsDate} currAmount={userDetailsState.nextSavingsAmount} setErrors={setErrors} classStyle="mt-4 mb-2" />
           <UsefulContacts classStyle="mt-4 mb-2" />
         </Row>
       </Container>
