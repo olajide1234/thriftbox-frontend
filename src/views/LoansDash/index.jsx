@@ -73,7 +73,7 @@ function LoansDash(props) {
           <Row><Col md={{ span: 6, offset: 3 }}>{renderErrors(errors)}</Col></Row>
         <Row>
           <Col>
-            {userLoansAndSavingsState.loansTransactions.length < 1 ? 'No loans history yet. Take a loan to see a table of loan history here!' : <DebtTable title="Loans details" data={userLoansAndSavingsState.loans} />}
+            {userLoansAndSavingsState.loans.length < 1 ? 'No loans history yet. Take a loan to see a table of loan history here!' : <DebtTable title="Loans details" data={userLoansAndSavingsState.loans} />}
           </Col>
           {/* <Col>
             <TwoLineCard classStyle="mb-3 p-2" header="Total outstanding amount" text={`NGN ${userLoansAndSavingsState.loansBalance.balance.toLocaleString()}`} />

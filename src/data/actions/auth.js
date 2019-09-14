@@ -1,8 +1,12 @@
+const dotenv = require('dotenv');
+dotenv.config();
+const BACKEND = process.env;
+
 import { SWITCH_USER } from "./actionTypes";
 
 
 export const loginUser = async (dispatch, payload) => {
-  const response = await fetch('http://localhost:5000/users/signin', {
+  const response = await fetch(`${BACKEND}/users/signin`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -24,7 +28,7 @@ export const loginUser = async (dispatch, payload) => {
 };
 
 export const userDetails = async (dispatch, payload) => {
-  const response = await fetch('http://localhost:5000/users/', {
+  const response = await fetch(`${BACKEND}/users/`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

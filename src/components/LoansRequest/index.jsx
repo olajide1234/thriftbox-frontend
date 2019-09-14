@@ -23,7 +23,7 @@ function LoansRequest({ classStyle, setErrors }) {
   }
 
   function updateguarantor2Id(name) {
-    setloanApplication({ ...loanApplication, guarantor2: nameId[name] });
+    setloanApplication({ ...loanApplication, guarantor2Id: nameId[name] });
   }
 
   async function onSubmit(event) {
@@ -31,7 +31,7 @@ function LoansRequest({ classStyle, setErrors }) {
     const response = await requestLoan(loanApplication);
 
     if (response.success === true) {
-      return window.location.reload();
+      // return window.location.reload();
     }
     return setErrors([response.message]);
   }

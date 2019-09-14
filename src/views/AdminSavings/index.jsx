@@ -24,7 +24,6 @@ function AdminSavings(props) {
     async function fetchData() {
       const details = await userDetails();
       const coopStats = await generalStats();
-      console.log('dea', coopStats);
 
       if (details.success === true) {
         setuserDetailsState(details.data);
