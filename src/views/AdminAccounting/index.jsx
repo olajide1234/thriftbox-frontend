@@ -22,9 +22,6 @@ function AdminAccounting(props) {
       if (details.success === true) {
         setuserDetailsState(details.data);
       }
-      if (loansandsavings.success === true) {
-        setuserLoansAndSavingsState(loansandsavings.data);
-      }
     }
     fetchData();
   }, []);

@@ -19,13 +19,10 @@ function AdminDash(props) {
   const [userDetailsState, setuserDetailsState] = useState([]);
   const [generalStatState, setgeneralStatState] = useState([]);
 
-  console.log('admin state', userDetailsState);
-
   useEffect(() => {
     async function fetchData() {
       const details = await userDetails();
       const coopStats = await generalStats();
-      console.log('dea', coopStats);
 
       if (details.success === true) {
         setuserDetailsState(details.data);
@@ -44,7 +41,6 @@ function AdminDash(props) {
   if (!generalStatState.totalLoansBalance) {
     return <div className='center'><Loader /></div>
   }
-  console.log('general stat', generalStatState);
 
   return (
     <div>
@@ -59,7 +55,7 @@ function AdminDash(props) {
           admin />
         <Row>
           <Col>
-            <GraphBox title="Total savings history" data={generalStatState.allSavingsTransactions}/>
+            <GraphBox title="Total savings history" data={generalStatState.allSavingsTransactions} />
           </Col>
           <Col>
             <Row className="mr-0 ml-0">
@@ -68,9 +64,9 @@ function AdminDash(props) {
             </Row>
             <Row className="mr-0 ml-0">
               <ThreeLineCard
-              title="Useful statistics"
-              itemOne={{ title: "Average savings amount", text: `NGN ${(generalStatState.totalSavingsBalance.balance / generalStatState.memberCount).toLocaleString()}` }}
-              itemTwo={{ title: "Average loan amount", text: `NGN ${(generalStatState.totalLoansBalance.balance / generalStatState.memberCount).toLocaleString()}` }}  />
+                title="Useful statistics"
+                itemOne={{ title: "Average savings amount", text: `NGN ${(generalStatState.totalSavingsBalance.balance / generalStatState.memberCount).toLocaleString()}` }}
+                itemTwo={{ title: "Average loan amount", text: `NGN ${(generalStatState.totalLoansBalance.balance / generalStatState.memberCount).toLocaleString()}` }} />
             </Row>
           </Col>
         </Row>

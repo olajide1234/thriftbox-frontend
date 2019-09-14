@@ -180,7 +180,6 @@ function AdminLoans(props) {
 
   async function onApprove(id, approval) {
     const result = await loansApproval(id, approval);
-    console.log('loans app', result);
 
     if (result.success === true) {
       return window.location.reload();
@@ -188,9 +187,6 @@ function AdminLoans(props) {
 
     return setErrors([result.message]);
   }
-
-  console.log('loans', allPendingLoansState, allApprovedLoansState);
-
 
   return (
     <div>

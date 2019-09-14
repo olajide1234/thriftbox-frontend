@@ -15,8 +15,6 @@ const SavingsChangeRequest = ({ classStyle, setErrors, currDate, currAmount }) =
     savingsDateAndAmountApproval: 'pending'
   });
 
-  console.log('nse', newSavingsData);
-
 
   function updateLocalState(event) {
     setnewSavingsData({ ...newSavingsData, [event.target.name]: event.target.value });

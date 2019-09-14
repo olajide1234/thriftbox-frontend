@@ -52,7 +52,7 @@ function SavingsChangeApproval({ classStyle, setErrors }) {
 
   async function onApprove(id, approval, prevSavingsDate, nextSavingsDate, prevSavingsAmount, nextSavingsAmount, email) {
     let data = {}
-    console.log('app', approval);
+
 
     if (approval === 'approved') {
       data.nextSavingsDate = nextSavingsDate;
@@ -77,8 +77,6 @@ function SavingsChangeApproval({ classStyle, setErrors }) {
     return setErrors([result.message]);
   }
 
-  console.log('data', requestsState);
-
   if (!requestsState) {
     return <div className='center'><Loader /></div>
   }
@@ -89,7 +87,7 @@ function SavingsChangeApproval({ classStyle, setErrors }) {
         <div className="border-bottom">
           <span>
             <h3 className="no-buttom-margin mb-4">Pending savings amount change request</h3>
-            {requestsState.length > 1 ? <Row className="pl-3">
+            {requestsState.length >= 1 ? <Row className="pl-3">
               <Col>Member ID</Col>
               <Col>Member name</Col>
               <Col>Old savings day</Col>
