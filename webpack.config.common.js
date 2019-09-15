@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var dotenv = require('dotenv').config({path: __dirname + '/.env'});
 
 module.exports = {
   entry: ['@babel/polyfill', './src/app.js'],
@@ -39,11 +40,17 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.css', '.scss']
   },
+  node: {
+    fs: "empty"
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html'
-    })
+    }),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(dotenv.parsed)
+    }),
   ],
 };

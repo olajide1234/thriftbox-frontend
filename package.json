@@ -59,6 +59,7 @@
     "datatables.net-dt": "^1.10.19",
     "datatables.net-responsive": "^2.2.3",
     "datatables.net-responsive-dt": "^2.2.3",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "flag-icon-css": "^3.2.1",
     "flot.curvedlines": "^1.1.1",
