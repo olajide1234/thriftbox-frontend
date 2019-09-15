@@ -1,7 +1,4 @@
-const dotenv = require('dotenv');
-dotenv.config();
-const BACKEND = process.env;
-
+const { BACKEND } = process.env;
 
 export const contactDetails = async (dispatch) => {
   const response = await fetch(`${BACKEND}/exco`, {

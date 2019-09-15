@@ -1,6 +1,4 @@
-const dotenv = require('dotenv');
-dotenv.config();
-const BACKEND = process.env;
+const { BACKEND } = process.env;
 
 import { SWITCH_USER } from "./actionTypes";
 

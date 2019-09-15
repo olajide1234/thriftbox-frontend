@@ -1,8 +1,4 @@
-const dotenv = require('dotenv');
-dotenv.config();
-const BACKEND = process.env;
-
-
+const { BACKEND } = process.env;
 
 export const loansAndSavings = async (dispatch) => {
   const response = await fetch(`${BACKEND}/savingsandloans`, {
