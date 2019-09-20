@@ -175,3 +175,33 @@ export const createNewAccount = async (data) => {
 
   return responseData
 };
+
+export const requestPromoLoan = async (data) => {
+
+  const response = await fetch(`${BACKEND}/promoloans`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-access-token': localStorage.getItem('token'),
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(data),
+  })
+  let responseData = await response.json();
+  return responseData
+};
+
+export const createPromoItem = async (data) => {
+
+  const response = await fetch(`${BACKEND}/addpromo`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-access-token': localStorage.getItem('token'),
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(data),
+  })
+  let responseData = await response.json();
+  return responseData
+};

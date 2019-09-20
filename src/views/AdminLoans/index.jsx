@@ -13,7 +13,7 @@ import Loader from '../../components/Loader';
 
 function Request({ pendingLoans, onApprove }) {
   return (
-    pendingLoans.map(data => (<Card className="mx-2 my-2" style={{ width: '48%' }}>
+    pendingLoans.map(data => (<Card key ={data.id} className="mx-2 my-2" style={{ width: '48%' }}>
       <Card.Body>
         <Table className="table-borderless">
           <tbody>
@@ -24,7 +24,7 @@ function Request({ pendingLoans, onApprove }) {
               </td>
               <td className="pl-0">
                 <p className="lighter no-buttom-margin">Guarantor 1</p>
-                <p className="no-buttom-margin">{`${data.guarantor1.firstName} ${data.guarantor1.lastName}`}</p>
+                {data.guarantor1 && <p className="no-buttom-margin">{`${data.guarantor1.firstName} ${data.guarantor1.lastName}`}</p>}
               </td>
             </tr>
             <tr>
@@ -34,7 +34,7 @@ function Request({ pendingLoans, onApprove }) {
               </td>
               <td className="pl-0">
                 <p className="lighter no-buttom-margin">Guarantor 2</p>
-                <p className="no-buttom-margin">{`${data.guarantor2.firstName} ${data.guarantor2.lastName}`}</p>
+                {data.guarantor2 && <p className="no-buttom-margin">{`${data.guarantor2.firstName} ${data.guarantor2.lastName}`}</p>}
               </td>
             </tr>
             <tr>
@@ -52,6 +52,10 @@ function Request({ pendingLoans, onApprove }) {
         <div>
           <h5 className="lighter no-buttom-margin">Comments</h5>
           <p>{data.comments}</p>
+        </div>
+        <div>
+          <h5 className="lighter no-buttom-margin">Loan type</h5>
+          <p>{data.type}</p>
         </div>
         <div className="my-4">
           <h5 className="lighter no-buttom-margin">Approvals</h5>
@@ -77,7 +81,7 @@ function Request({ pendingLoans, onApprove }) {
 
 function PreviousRequest({ approvedLoans }) {
   return (
-    approvedLoans.map(data => (<Card className="mx-2 my-2" style={{ width: '48%' }}>
+    approvedLoans.map(data => (<Card key ={data.id} className="mx-2 my-2" style={{ width: '48%' }}>
       <Card.Body>
         <Table className="table-borderless">
           <tbody>
@@ -88,7 +92,7 @@ function PreviousRequest({ approvedLoans }) {
               </td>
               <td className="pl-0">
                 <p className="lighter no-buttom-margin">Guarantor 1</p>
-                <p className="no-buttom-margin">{`${data.guarantor1.firstName} ${data.guarantor1.lastName}`}</p>
+                {data.guarantor1 && <p className="no-buttom-margin">{`${data.guarantor1.firstName} ${data.guarantor1.lastName}`}</p>}
               </td>
             </tr>
             <tr>
@@ -98,7 +102,7 @@ function PreviousRequest({ approvedLoans }) {
               </td>
               <td className="pl-0">
                 <p className="lighter no-buttom-margin">Guarantor 2</p>
-                <p className="no-buttom-margin">{`${data.guarantor2.firstName} ${data.guarantor2.lastName}`}</p>
+                {data.guarantor2 && <p className="no-buttom-margin">{`${data.guarantor2.firstName} ${data.guarantor2.lastName}`}</p>}
               </td>
             </tr>
             <tr>
