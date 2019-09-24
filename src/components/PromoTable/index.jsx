@@ -17,6 +17,7 @@ function PromoTable({ title, subTitle, data }) {
           <thead>
             <tr>
               <th>S/N</th>
+              <th>Id</th>
               <th>Name</th>
               <th>Quantity</th>
               <th>Price</th>
@@ -27,6 +28,7 @@ function PromoTable({ title, subTitle, data }) {
           <tbody>
             {data.map((data, index) => <tr>
               <td>{index + 1}</td>
+              <td>{data.id}</td>
               <td>{data.name}</td>
               <td>{data.quantity}</td>
               <td>{data.price}</td>

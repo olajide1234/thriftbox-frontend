@@ -12,6 +12,7 @@ import { generalStats } from '../../data/actions/account';
 import { getAllPromoItems } from '../../data/actions/promo';
 import PromoTable from '../../components/PromoTable';
 import Loader from '../../components/Loader';
+import EditPromo from '../../components/EditPromo';
 
 function AdminPromo(props) {
   const { state } = React.useContext(Store);
@@ -58,12 +59,12 @@ function AdminPromo(props) {
           admin />
         <Row>
           <Col>
-          <PromoTable title="Promo items" subTitle="List of items available for purchase at discounted prices" data={promoItemsState} />
-            {/* <MainTable title="Promo items" subTitle="List of items available for purchase at discounted prices" approval /> */}
+            <PromoTable title="Promo items" subTitle="List of items available for purchase at discounted prices" data={promoItemsState} />
           </Col>
         </Row>
         <Row className="mr-0 ml-0">
           <PromoAdmin classStyle="mt-4 mb-2" />
+          <EditPromo />
           <UsefulContacts classStyle="mt-4 mb-2" />
         </Row>
       </Container>
