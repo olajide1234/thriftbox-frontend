@@ -13,6 +13,7 @@ import Footer from '../../components/Footer';
 import { userDetails } from '../../data/actions/auth';
 import { generalStats } from '../../data/actions/account';
 import Loader from '../../components/Loader';
+import UsefulContacts from '../../components/UsefulContacts';
 
 function AdminDash(props) {
   const { state } = React.useContext(Store);
@@ -72,7 +73,7 @@ function AdminDash(props) {
         </Row>
         <Row className="mr-0 ml-0">
           <AdminQuickActions classStyle="mt-4 mb-2" history={props.history} />
-          <UsefulBalances classStyle="mt-4 mb-2" />
+          <UsefulContacts classStyle="mt-4 mb-2" />
         </Row>
       </Container>
       <Footer />

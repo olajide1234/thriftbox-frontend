@@ -38,8 +38,6 @@ function EditPromo({ classStyle }) {
     }
     return setErrors([response.message]);
   }
-
-  console.log('data', promoItemDetails );
   
 
   async function onRequest(event) {

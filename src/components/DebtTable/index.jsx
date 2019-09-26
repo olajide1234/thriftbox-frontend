@@ -38,7 +38,7 @@ class DebtTable extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {data.map((entry, index) => <tr>
+              {data.map((entry, index) => <tr key={entry.id}>
                 <td>{index + 1}</td>
                 <td>{`${new Date(entry.createdAt)}`}</td>
                 <td>{entry.loanAmount}</td>

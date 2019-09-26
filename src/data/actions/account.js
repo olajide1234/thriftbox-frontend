@@ -205,3 +205,18 @@ export const createPromoItem = async (data) => {
   let responseData = await response.json();
   return responseData
 };
+
+export const allAccounts = async (data) => {
+
+  const response = await fetch(`${BACKEND}/books/1/accounts`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-access-token': localStorage.getItem('token'),
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  })
+  let responseData = await response.json();
+
+  return responseData
+};

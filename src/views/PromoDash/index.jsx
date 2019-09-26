@@ -36,8 +36,6 @@ function PromoDash(props) {
     fetchData();
   }, []);
 
-  console.log('promoItemsState', promoItemsState);
-
 
   return (
     <div>

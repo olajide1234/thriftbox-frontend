@@ -27,7 +27,6 @@ class QuickActions extends React.Component {
             <LargeButton text="Request quick loan" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/loans')} />
             <LargeButton text="Buy promo item" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/promo')} />
             <LargeButton text="Increase savings" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/savings')} />
-            <LargeButton text="Make a complaint" classStyle="mt-4 mb-3 p-3" />
           </Row>
         </Card.Body>
       </Card>

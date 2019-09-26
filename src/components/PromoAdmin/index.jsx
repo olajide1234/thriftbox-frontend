@@ -36,9 +36,6 @@ function PromoAdmin({ classStyle }) {
   }
 
 
-  console.log('fs', formState);
-
-
   return (
     <Card className={classStyle} style={{ width: "100%" }}>
       <Card.Body>
