@@ -24,10 +24,10 @@ class AdminQuickActions extends React.Component {
             </span>
           </div>
           <Row className="mr-0 ml-0 d-flex justify-content-between">
-            <LargeButton text="Post account entry" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/accounting')} />
-            <LargeButton text="Approve a loan" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/loans')} />
-            <LargeButton text="Manage members" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/members')} />
-            <LargeButton text="Download financials" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/accounting')} />
+            <LargeButton text="Post account entry" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/adminaccounting')} />
+            <LargeButton text="Approve a loan" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/adminloans')} />
+            <LargeButton text="Manage members" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/adminmembers')} />
+            <LargeButton text="View financials" classStyle="mt-4 mb-3 p-3" onClick={() => history.push('/adminaccounting')} />
           </Row>
         </Card.Body>
       </Card>
