@@ -55,7 +55,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.7.3",
     "cryptofont": "^0.1.1",
-    "datatables.net": "^1.10.19",
+    "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.19",
     "datatables.net-responsive": "^2.2.3",
     "datatables.net-responsive-dt": "^2.2.3",
