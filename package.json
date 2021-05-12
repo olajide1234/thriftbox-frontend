@@ -53,7 +53,7 @@
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.3.1",
-    "chart.js": "^2.7.3",
+    "chart.js": "^2.9.4",
     "cryptofont": "^0.1.1",
     "datatables.net": "^1.10.19",
     "datatables.net-dt": "^1.10.19",
